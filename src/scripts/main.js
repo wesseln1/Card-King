@@ -1,8 +1,14 @@
-import sayHello from "./hello"
-import sayGoodbye from "./goodbye"
-import SandwichMaker from "./sandwichMaker"
+import loginUser from "./components/Login/loginUser"
+import registerUser from "./components/Login/registerUser"
 
-sayHello()
-sayGoodbye()
 
-SandwichMaker.placeOrder("rye", "capicola", "provolone")
+let login = document.querySelector("#loginButton")
+let newUser = document.querySelector("#signUpButton")
+
+login.addEventListener("click", ()=> {
+  loginUser()
+})
+
+newUser.addEventListener("click", ()=> {
+  registerUser()
+})

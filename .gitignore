@@ -9,3 +9,5 @@ obj
 *.sqlite3
 .vscode
 dist
+package-lock.json
+api/*.json

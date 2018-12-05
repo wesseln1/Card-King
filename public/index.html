@@ -1,16 +1,40 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Browserify Boilerplate</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="main.css">
 </head>
+
 <body>
+    <section>
+        <div id="navBar" class="navBar">
+            <ul>
+                <li id="home" class="home"><a>Home</a></li>
+                <li id="cards" class="cards"><a>My Cards</a></li>
+                <li id="decks" class="decks"><a>Decks</a></li>
+                <li id="favorites" class="favorites"><a>Favorites</a></li>
+                <li id="logout" class="logout"><a>Logout</a></li>
+            </ul>
+        </div>
+    </section>
+    <div id="loginForm" class="loginForm">
+        <h1>Log In</h1>
+        <input type="text" id="login" class="login" placeholder="Email" />
+        <input type="password" id="password" placecholder="Password" />
+        <input type="button" id="loginButton" class="loginButton" value="Login" />
+        <input type="button" id="signUpButton" class="signUpButton" value="Register" />
+    </div>
     <article class="output">
 
     </article>
 
     <script src="bundle.js"></script>
+    <link href="https://unpkg.com/webkul-micron@1.1.6/dist/css/micron.min.css" type="text/css" rel="stylesheet">
+    <script src="https://unpkg.com/webkul-micron@1.1.6/dist/script/micron.min.js" type="text/javascript"></script>
 </body>
+
 </html>
