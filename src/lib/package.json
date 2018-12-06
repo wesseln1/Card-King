@@ -23,6 +23,7 @@
     "nss-domcomponent": "^0.1.0"
   },
   "dependencies": {
+    "pokemontcgsdk": "^1.1.0",
     "webkul-micron": "^1.1.6"
   }
 }

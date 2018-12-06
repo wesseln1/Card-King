@@ -1,5 +1,5 @@
 import userAPIFunctions from "./fetching"
-import hideDiv from "./classChanger"
+import hideLoginDiv from "./hideDiv"
 function loginUser(){
    sessionStorage.clear()
    let email= document.querySelector("#login").value
@@ -10,7 +10,7 @@ function loginUser(){
               email = document.querySelector("#login")
                sessionStorage.setItem("user_id", user.id)
                sessionStorage.setItem("email", email.value)
-               hideDiv.hideLoginDiv()
+               hideLoginDiv()
                alert("welcome")
            } else {
                alert("wrong password")
