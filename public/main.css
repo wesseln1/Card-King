@@ -4,12 +4,12 @@
     display: block;
     float: left;
     width: 100%;
-    }
-    #navBar * {
+    border: 5px;
     padding:0;
     margin:0;
     font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 1em;
+    border-style: solid blue;
     }
     #navBar ul {
     display: block;
@@ -20,4 +20,4 @@
     list-style: none;
     float: left;
     margin: 0 0 0 5px;
-}
+    }
