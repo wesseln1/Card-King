@@ -1,12 +1,18 @@
-// function cardForm(card) {
-//   let cards =  `
-//   <div id="card" class="card">
-//   <h1>${card.name}</h1>
-//     <div id="cardDiv" class="cardDiv">
-//     <a><img src=${card.imageUrl} alt=${card.name}></a>
-//     </div>
-//     <input type="button" id="deleteButton" class="deleteButton"/>
-//     </div>`
-//     return cards
-//   }
-// export default cardForm
+// let newCard = document.querySelector(".cardSearchButton"
+
+
+// newCard.addEventListener("click",() => {
+//     findCard()
+//     console.log("pokeClicked")
+//   })
+// import cardInput from "./cardInput"
+// import cardsToDom from "./cardInjection"
+// // const domEntry = document.querySelector(".output")
+
+// function whenClicked (){
+//   document.addEventListener("click", () => {
+//     // domEntry.innerHTML = cardInput()
+//     cardsToDom()
+//   })
+// }
+// export default whenClicked

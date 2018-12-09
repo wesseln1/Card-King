@@ -1,13 +1,22 @@
-// // import newCardForm from "./newCardForm"
-// import findCard from "./cardFetching"
+import newCardForm from "./newCardForm"
+import cardAPIFunctions from "./cardFetching"
 
-// // let cardDomEntry = document.querySelector(".output")
-// function cardsToDom(card){
+// let domEntry = document.querySelector(".domEntry")
+let cardDomEntry = document.querySelector(".output")
+function domCards(parsedCards) {
+  parsedCards.forEach(card => {
+    let taskContents = newCardForm(card)
+    cardDomEntry.innerHTML += taskContents
+  })
+}
 
-//   // cardDomEntry.innerHTML = ""
-//   findCard(card)
-//     // let cardContents = newCardForm(card)
-//     // cardDomEntry.innerHTML += cardContents
-//     console.log(card.name, "this card")
-// }
-// export default cardsToDom
+let cardsToDom = () => {
+  cardDomEntry.innerHTML = ""
+  cardAPIFunctions.getCards()
+    .then(parsedCards => domCards(parsedCards))
+    .then(() => {
+      cardDomEntry.innerHTML += newCardForm()
+      console.log("this card")
+    })
+}
+export default cardsToDom

@@ -8,8 +8,8 @@ const loginAPIFunctions = {
   getUser(email){
     console.log(email, "email")
     return fetch(`http://localhost:8088/users?email=${email}`)
-    .then(user => console.log(user.json()))
-    .then(parsedUser => console.log(parsedUser[0]))
+    .then(user => user.json())
+    .then(parsedUser => parsedUser[0])
   },
   postUser(obj){
     return fetch("http://localhost:8088/users",{

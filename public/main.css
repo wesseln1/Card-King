@@ -1,4 +1,4 @@
-#navBar {
+ #navBar {
     background: violet;
     overflow: auto;
     display: block;
@@ -20,4 +20,15 @@
     list-style: none;
     float: left;
     margin: 0 0 0 5px;
+    } */
+    .active {
+        font-weight: 600;
+    }
+
+    .tab-content {
+        display: none;
+    }
+
+    .show {
+        display: block;
     }
