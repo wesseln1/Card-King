@@ -12,23 +12,32 @@
 <body>
     <section>
         <div id="navBar" class="navBar">
-            <ul>
-                <li id="home" class="home"><a>Home</a></li>
-                <li id="cards" class="cards"><a>My Cards</a></li>
-                <li id="decks" class="decks"><a>Decks</a></li>
-                <li id="favorites" class="favorites"><a>Favorites</a></li>
-                <li id="logout" class="logout"><a>Logout</a></li>
-            </ul>
+            <nav id="navBarList" class="navBarList">
+                <a class="tab active" id="home" href="#one">>Home</a>
+                <a class="tab" id="cards" href="#two">My Cards</a>
+                <a class="tab" id="decks" href="#three">Decks</a></li>
+                <a class="tab" id="favorites" href="#four">Favorites</a>
+                <a class="tab" id="logout" href="#five"><a>Logout</a>
+        </nav>
         </div>
     </section>
-    <div id="loginForm" class="loginForm">
+    <div id="loginBox" class="navBarContent show">
+        <form>
         <h1>Log In</h1>
-        <input type="text" id="login" class="login" placeholder="Email" />
-        <input type="password" id="password" placecholder="Password" />
-        <input type="button" id="loginButton" class="loginButton" value="Login" />
-        <input type="button" id="signUpButton" class="signUpButton" value="Register" />
-    </div>
-    <article class="output">
+            <input type="text" id="login" class="login" placeholder="Email" />
+            <input type="password" id="password" placecholder="Password" />
+            <input type="button" id="loginButton" class="loginButton" value="Login" />
+            <input type="button" id="signUpButton" class="signUpButton" value="Register" />
+        </form>
+        </div>
+        <div>
+            <section>
+                <input type="text" id="cardName" class="cardName" placeholder="Card Name">
+                <button id="cardSearchButton" class="cardSearchButton" value="Search Pokedex" placeholder="search">
+            </section>
+        </div>
+
+    <article id="output" class="navBarContent">
 
     </article>
 

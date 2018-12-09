@@ -6,7 +6,8 @@ const loginAPIFunctions = {
     // .then(console.log(parsedUsers, "user"))
   },
   getUser(email){
-    return fetch(`http://localhost:8088/users?username=${email}`)
+    console.log(email, "email")
+    return fetch(`http://localhost:8088/users?email=${email}`)
     .then(user => user.json())
     .then(parsedUser => parsedUser[0])
   },
