@@ -4,41 +4,37 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Browserify Boilerplate</title>
+    <title>Card Kings</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 
 <body>
     <section>
         <div id="navBar" class="navBar">
+            <h1 id="title" class="title">Card Kings!</h1>
             <nav id="navBarList" class="navBarList">
-                <a class="tab active" id="home" href="#one">>Home</a>
+                <a class="tab" id="home" href="#one">>Home</a>
                 <a class="tab" id="cards" href="#two">My Cards</a>
-                <a class="tab" id="decks" href="#three">Decks</a></li>
+                <a class="tab" id="decks" href="#three">Decks</a>
                 <a class="tab" id="favorites" href="#four">Favorites</a>
-                <a class="tab" id="logout" href="#five"><a>Logout</a>
-        </nav>
+                <a class="tab" id="logout" href="#five">Logout</a>
+            </nav>
         </div>
     </section>
     <div id="loginBox" class="navBarContent show">
         <form>
-        <h1>Log In</h1>
+            <h1>Log In</h1>
             <input type="text" id="login" class="login" placeholder="Email" />
             <input type="password" id="password" placecholder="Password" />
             <input type="button" id="loginButton" class="loginButton" value="Login" />
             <input type="button" id="signUpButton" class="signUpButton" value="Register" />
         </form>
-        </div>
-        <div>
-            <section>
-                <input type="text" id="cardName" class="cardName" placeholder="Card Name">
-                <button id="cardSearchButton" class="cardSearchButton" value="Search Pokedex" placeholder="search">
-            </section>
-        </div>
+    </div>
 
-    <article id="output" class="navBarContent">
-
+    <article id="domEntry" class="domEntry">
     </article>
 
     <script src="bundle.js"></script>

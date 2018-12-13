@@ -1,38 +1,44 @@
 // import newCardForm from "./newCardForm"
-import postCard from "./cardPost"
-const pokemon = require("pokemontcgsdk")
+// import newPostCard from "./cardPost"
+// const pokemon = require("pokemontcgsdk")
 // let cardDomEntry = document.querySelector(".output")
+
 const cardAPIFetching = {
 
-  findCard(cards){
-    cards = document.querySelector(".cardName").value
-    pokemon.card.where({ name: `${cards}` })
-    .then(card => {
-      let newCard = {
-        user_id: sessionStorage.user_id,
-        name: card[0].name,
-        id: card[0].id,
-        type: card[0].types,
-        hp: card[0].hp,
-        pokedex_number: card[0].nationalPokedexNumber,
-        img: card[0].imgageURL,
-        series: card[0].series,
-        rarity: card[0].rarity,
-        ability: card[0].ability,
-        attacks: card[0].attacks,
-        weaknesses: card[0].weaknesses,
-        resistances: card[0].resistances,
-      }
-      return postCard(newCard)
-      // console.log(newCard, "after")
-    }
-    )
-  },
-  getCards(){
+  getCards() {
     return fetch("http://localhost:8088/cards")
     .then(cards => cards.json())
     .then(parsedCards => parsedCards)
-  }
+  },
 
+  getCard(card){
+
+    return fetch(`http://localhost:8088/cards?q=${card}`)
+    .then(cards => cards.json())
+    .then(parsedCard => parsedCard)
+  },
+
+  getAPICards(card) {
+    return fetch(`https://api.pokemontcg.io/v1/cards?name=${card}`)
+      .then(cards => cards.json())
+      .then(parsedCards => parsedCards)
+    // console.log(newCard, "after")
+  },
+  postCard(card){
+    console.log(card, "card 44")
+    return fetch("http://localhost:8088/cards", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(card)
+    }).then(post => post.json())
+  },
+  deleteCard(id){
+    console.log("deleted")
+    return fetch(`http://localhost:8088/cards/${id}`, {
+      method: "DELETE"
+    }).then(r => r.json())
+  }
 }
-  export default cardAPIFetching
+export default cardAPIFetching
