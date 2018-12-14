@@ -2,31 +2,27 @@
 // import newPostCard from "./cardPost"
 // const pokemon = require("pokemontcgsdk")
 // let cardDomEntry = document.querySelector(".output")
-
+let port = 8086
 const cardAPIFetching = {
 
   getCards() {
-    return fetch("http://localhost:8088/cards")
+    return fetch(`http://localhost:${port}/cards`)
     .then(cards => cards.json())
     .then(parsedCards => parsedCards)
   },
-
   getCard(card){
-
-    return fetch(`http://localhost:8088/cards?q=${card}`)
+    console.log("fired")
+    return fetch(`http://localhost:${port}/cards?q=${card}`)
     .then(cards => cards.json())
     .then(parsedCard => parsedCard)
   },
-
   getAPICards(card) {
     return fetch(`https://api.pokemontcg.io/v1/cards?name=${card}`)
       .then(cards => cards.json())
       .then(parsedCards => parsedCards)
-    // console.log(newCard, "after")
   },
   postCard(card){
-    console.log(card, "card 44")
-    return fetch("http://localhost:8088/cards", {
+    return fetch(`http://localhost:${port}/cards`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -35,8 +31,7 @@ const cardAPIFetching = {
     }).then(post => post.json())
   },
   deleteCard(id){
-    console.log("deleted")
-    return fetch(`http://localhost:8088/cards/${id}`, {
+    return fetch(`http://localhost:${port}/cards/${id}`, {
       method: "DELETE"
     }).then(r => r.json())
   }

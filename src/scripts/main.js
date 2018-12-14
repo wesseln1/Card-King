@@ -2,11 +2,13 @@ import loginUser from "./components/Login/loginUser"
 import registerUser from "./components/Login/registerUser"
 import postNewCard from "./components/Cards/selectCard"
 import cardFormManager from "./components/Cards/formInjection"
+import getAllCards from "./components/Cards/allCardsToDom"
+import deckSearchForm from "./components/Decks/formInjection"
+import homePageInjection from "./components/Home/homePageInjection"
 
 
-
-let login = document.querySelector(".loginButton")
-let newUser = document.querySelector(".signUpButton")
+let login = document.querySelector("#loginButton")
+let newUser = document.querySelector("#signUpButton")
 // let card = document.querySelector(".cardSearchButton")
 
 // let homeNav = document.querySelector(".home")
@@ -19,60 +21,69 @@ let newUser = document.querySelector(".signUpButton")
 login.addEventListener("click", () => {
   loginUser()
 })
-$(document).ready(function () {
-  $("#cards").click(function () {
-    cardFormManager.searchForm()
-    cardFormManager.cardListening()
-    cardFormManager.searchAll()
-
-    // cardFormManager.addCard()
-  })
-})
-// card.addEventListener("click", () => {
-//   // findMyCard( )
-//   cardsToDom()
-// })
-
-$(document).ready(function () {
-    $("#addToCollection").click(function () {
-      postNewCard()
-    })
-  })
-
-// $(document).ready(function () {
-//   $("#cardSearachButton").click(function () {
-//     // findMyCard()
-//   })
-// })
-
-$(document).ready(function () {
-    $("#loginButton").click(function () {
-      $("#loginBox").hide()
-    });
-  })
-
-$(document).ready(function () {
-    $("#loginButton").click(function () {
-      $("#cardSearchDiv").show()
-    })
-  })
-$(document).ready(function () {
-    $("#loginButton").click(function () {
-    });
-  });
-$(document).ready(function () {
-  $("#addToFavorites").click(function () {
-    postNewCard()
-  })
-})
 
 newUser.addEventListener("click", () => {
   registerUser()
 })
 
+$(document).ready(function () {
+  $("#decks").click(function () {
+    deckSearchForm()
+    console.log("clicked decks")
+  })
+})
+
+$(document).ready(function (){
+  $("#home").click(function (){
+    homePageInjection()
+    console.log("clicked home")
+  })
+})
+
+$(document).ready(function (){
+  $("#cards").click(function () {
+    cardFormManager.searchForm()
+    console.log("clicked cards")
+    cardFormManager.cardListening()
+    cardFormManager.searchAll()
+    getAllCards()
+  })
+})
+
+$(document).ready(function () {
+  $("#addToCollection").click(function () {
+    console.log("clicked add")
+    postNewCard()
+  })
+})
+
+$(document).ready(function () {
+  $("#loginButton").click(function () {
+    $("#loginBox").hide()
+    homePageInjection()
+  });
+})
+
+$(document).ready(function () {
+  $("#loginButton").click(function () {
+    $("#cardSearchDiv").show()
+  })
+})
+$(document).ready(function () {
+  $("#loginButton").click(function () {
+  });
+});
+// $(document).ready(function () {
+//   $("#addToFavorites").click(function () {
+//     postNewCard()
+//   })
+// })
 // homeNav.addEventListener("click", () => {
 //   console.log("home")
+//   homePageInjection()
 // })
+
+
 
 //  cardNav.addEventListener("click", () =>{
 //   // cardAPIFunctions.findCard()

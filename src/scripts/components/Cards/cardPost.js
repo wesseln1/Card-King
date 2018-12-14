@@ -9,7 +9,7 @@ function postMyNewCard(card){
       type: card.types,
       hp: card.hp,
       pokedex_number: card.nationalPokedexNumber,
-      imgageUrl: card.imgageUrl,
+      imageUrl: card.imageUrl,
       series: card.series,
       rarity: card.rarity,
       ability: card.ability,

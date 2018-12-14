@@ -11,7 +11,11 @@ const cardForms = {
   </div>
   <div class="cardUrl">
   <a><img src=${card.imageUrl} alt=${card.name}></a>
+  </div>
+  <div id="cardButtonDiv" class="cardButtonDiv">
+  <div>
   <input type="button" id="deleteButton" class=${card.id} value="Delete" placeholder="Delete"/>
+  </div>
   </div>
   </div>
   `
@@ -27,7 +31,6 @@ const cardForms = {
     </div>
     <input type="button" id="addToCollection" class="addToCollection" placeholder="Add To Collection" value="Add To Collection"/>
     <input type="button" id="deleteButton" class=${card.id} value="Delete" placeholder="Delete"/>
-    <input type="button" id="addToFavorites" class="addToFavorites" placeholder="Add To Favorties" value="Add To Favorites" />
     </div>`
     return cards
   }
