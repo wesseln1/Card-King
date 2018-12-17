@@ -1,6 +1,6 @@
 import deckForm from "./deckForm"
 import decks from "./newDeck"
-let domEntry = document.querySelector(".domEntry")
+// let domEntry = document.querySelector(".domEntry")
 function deckEventListener(){
   let myDeck = document.querySelector(".newDeck")
   myDeck.addEventListener("click", ()=>{
@@ -9,7 +9,7 @@ function deckEventListener(){
 }
 function deckSearchForm(){
   let form = deckForm()
-  domEntry.innerHTML = form
+  $(".domEntry").append(form)
   deckEventListener()
 }
 export default deckSearchForm

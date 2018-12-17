@@ -6,27 +6,29 @@ import deleteCard from "./cardListener"
 // import postNewCard from "./selectCard";
 // import searchCardCollection from "./cardInput"
 
-let domEntry = document.querySelector(".domEntry")
+// let domEntry = document.querySelector(".domEntry")
 // let card = document.querySelector(".cardName")
-function clearDom(){
-domEntry.innerHTML = ""
-}
+// function clearDom(){
+// domEntry.innerHTML = ""
+// }
 
 function domCards(parsedCards) {
-  clearDom()
+  // $(".domEntry").detch()
 for(let card in parsedCards){
   let taskContents = parsedCards[card]
   taskContents.forEach(card => {
     taskContents = cardForms.cardForm(card)
-    domEntry.innerHTML += taskContents
-    cardFormManager.addCard(card)
-    deleteCard()
+    $("domEntry").append(taskContents)
+    $(".addToCollection").click(
+      cardFormManager.addCard(card),
+      deleteCard()
+      )
   })
 }
 }
 
 let cardsToDom = (card) => {
-  clearDom()
+  // $(".domEntry").detach()
   console.log("at fetch")
   cardAPIFetching.getAPICards(card.value)
   .then(parsedCards => parsedCards)

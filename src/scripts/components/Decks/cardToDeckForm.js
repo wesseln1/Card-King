@@ -1,11 +1,11 @@
 import addToDeck from "./addToDeckForm"
 import decks from "./newDeck"
-let domEntry = document.querySelector(".domEntry")
+// let domEntry = document.querySelector(".domEntry")
 const deckForms = {
 
   deckSearchForm() {
     let form = addToDeck()
-    domEntry.innerHTML = form
+    $(".domEntry").append(form)
   },
   cardToDeckEventListener() {
     let addCard = document.querySelector(".sendToDeck")
