@@ -1,10 +1,11 @@
 import deleteCards from "./deleteCard"
+// import cardsToDom from "./cardInjection";
 
- function deleteCard(){
+ function deleteCard(card){
    console.log("delete")
-    document.addEventListener("click", function (e){
-      if(e.target && e.target.id === "deleteButton"){
-      let cardIdNumber = e.target.className
+    $(`#${card.id}`).click((e)=>{
+      if(e.target && e.target.id === `${e.target.id}`){
+      let cardIdNumber = e.target.id
       deleteCards(cardIdNumber)
     }})
   }

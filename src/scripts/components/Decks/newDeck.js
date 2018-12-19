@@ -18,22 +18,19 @@ const decks = {
       return (deck)
   },
 
-  newCardToDeck(card) {
-    console.log(card, "thsi card")
-    deckAPIFetching.getDeck(card)
+  newCardToDeck(card, deck) {
+    deckAPIFetching.getDeck(deck)
     .then(deck => deck)
-    .then(console.log(card, "now card"))
-    // cardAPIFetching.getCard(card)
-    card.forEach(() => {
+    .then(function newDeck(deck){
+      console.log("this card", deck, card, )
       let obj = {
         user_id: sessionStorage.user_id,
+        deck_id: deck[0].id,
         card_id: card.id,
-        deck_id: deck.id
       }
+      console.log("obj", obj)
       deckAPIFetching.postCardToDeck(obj)
-        .then(console.log(obj))
+    })
     }
-    )
-  }
 }
 export default decks

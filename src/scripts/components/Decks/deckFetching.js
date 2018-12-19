@@ -2,7 +2,7 @@ let port = 8086
 const deckAPIFetching = {
 // fetch to grab certain deck
   getDeck(deckName){
-    return fetch(`http://localhost:${port}/decks/${deckName}`)
+    return fetch(`http://localhost:${port}/decks?q=${deckName}`)
     .then(deck => deck.json())
     .then(parsedDeck => parsedDeck)
   },
@@ -19,7 +19,7 @@ const deckAPIFetching = {
   },
 // fetch to post new card to deck
   postCardToDeck(card){
-    return fetch(`http://localhost:${port}/deckCards/${card}`,{
+    return fetch(`http://localhost:${port}/deckCards`,{
       method: "POST",
       headers: {
         "Content-Type": "application/json"

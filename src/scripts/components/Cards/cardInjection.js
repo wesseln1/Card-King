@@ -1,7 +1,7 @@
 import cardForms from "./newCardForm"
 import cardAPIFetching from "./cardFetching"
 import cardFormManager from "./formInjection"
-import deleteCard from "./cardListener"
+
 
 // import postNewCard from "./selectCard";
 // import searchCardCollection from "./cardInput"
@@ -13,27 +13,26 @@ import deleteCard from "./cardListener"
 // }
 
 function domCards(parsedCards) {
-  // $(".domEntry").detch()
-for(let card in parsedCards){
-  let taskContents = parsedCards[card]
-  taskContents.forEach(card => {
-    taskContents = cardForms.cardForm(card)
-    $("domEntry").append(taskContents)
-    $(".addToCollection").click(
-      cardFormManager.addCard(card),
-      deleteCard()
-      )
-  })
-}
+  // $(".domEntry").empty()
+  for (let card in parsedCards) {
+    let taskContents = parsedCards[card]
+    taskContents.forEach(card => {
+      taskContents = cardForms.cardForm(card)
+      $("#cardEntry").append(taskContents)
+      // let cards = document.querySelector(`#add_${card.id}`)
+      console.log("cards", card)
+      cardFormManager.addCard(card)
+    })
+  }
 }
 
 let cardsToDom = (card) => {
-  // $(".domEntry").detach()
+  $(".p-2").detach()
   console.log("at fetch")
-  cardAPIFetching.getAPICards(card.value)
+  cardAPIFetching.getAPICards(card)
   .then(parsedCards => parsedCards)
-  .then(parsedCards =>
-    domCards(parsedCards)
+    .then(parsedCards =>
+      domCards(parsedCards)
     )
 }
 export default cardsToDom
