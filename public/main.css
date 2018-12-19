@@ -1,5 +1,5 @@
  #navBar {
-    background: violet;
+    background: black;
     overflow: auto;
     display: block;
     float: left;
@@ -20,7 +20,39 @@
     list-style: none;
     float: left;
     margin: 0 0 0 5px;
-    } */
+    }
+    .title{
+        color: aqua;
+    }
+    body{
+        background-color: aqua;
+    }
+    .p-2{
+        background-color: aqua;
+        border: 2px, red;
+    }
+    #homePageDiv {
+        display: block;
+        padding: 10px;
+        border: 5px;
+        margin: 10px;
+        float: left;
+        border-color: blue;
+    }
+    .deleteButton{
+        display: block;
+        float: right 20px;
+        width: 10px;
+        height: 10px
+    }
+    .addToFavorites{
+        width: 10px;
+        height: 10px
+    }
+    .addToDeck {
+        width: 10;
+        height: 10px
+    }
     .active {
         font-weight: 600;
     }
@@ -31,4 +63,10 @@
 
     .show {
         display: block;
+    }
+    .add {
+        display: block;
+        float: right 20px;
+        width: 10px;
+        height: 10px;
     }

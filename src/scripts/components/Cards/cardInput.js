@@ -1,12 +1,18 @@
-// function cardInput() {
-//  let cardForm = `
-//   // <div>
-//   //       <section>
-//   //           <input type="text" id="cardName" class="cardName" placeholder="Card Name">
-//   //           <button onClick= id="cardSearchButton" class="cardSearchButton" value="Search Pokedex" placeholder="search">
-//   //       </section>
-//   //   </div>
-//   `
-//   return cardForm
-// }
-// export default cardInput
+function cardSearchForm() {
+  let card = `
+  <section>
+  <div id="cardSearchFormDiv" class="cardSearchFormDiv">
+  <div id="pageHeader" class="pageHeader">
+  <h1>My Cards!</h1>
+  </div>
+  <div id="cardSearchDiv hide" class="cardSearchDiv"/>
+      <input type="text" id="cardName" class="cardName" placeholder="Card Name"/>
+      <input type="button" id="cardSearchButton" class="cardSearchButton " value="Search Pokedex" placeholder="Search Pokedex"/>
+      <input type="button" id="allCardSearch" class="allCardSearch" value="Search All Cards"/>
+  </div>
+  </div>
+  </section>
+  `
+  return card
+}
+export default cardSearchForm
