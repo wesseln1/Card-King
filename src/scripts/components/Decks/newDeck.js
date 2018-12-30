@@ -6,6 +6,7 @@ const decks = {
     // console.log("runnin")
     let myDeck = document.querySelector(".deckName")
     // console.log(myDeck, "my deck")
+    console.log(myDeck, "myDeck")
     let deck = {
       user_id: sessionStorage.user_id,
       name: myDeck.value
@@ -19,7 +20,7 @@ const decks = {
   },
 
   newCardToDeck(card, deck) {
-    deckAPIFetching.getDeck(deck)
+    deckAPIFetching.getDeckByName(deck)
     .then(deck => deck)
     .then(function newDeck(deck){
       console.log("this card", deck, card, )

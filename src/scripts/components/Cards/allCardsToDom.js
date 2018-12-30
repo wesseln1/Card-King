@@ -6,7 +6,7 @@ import addCardDeck from "../Decks/cardsToDeckListener"
 
 // let domEntry = document.querySelector(".domEntry")
 function getAllCards() {
-  $(".domEntry").detach(),
+  $(".p-2").detach(),
   // $("#cardEntry").detach()
   cardAPIFunctions.getCards()
     .then(parsedCards => {

@@ -16,9 +16,6 @@ function searchForCard(parsedCard){
     })
     cardToDeckListening()
   }
-// function clearDom(){
-//     domEntry.innerHTML = ""
-//   }
 
 let findMyCard = (card) => {
   console.log(card, "heres my card")

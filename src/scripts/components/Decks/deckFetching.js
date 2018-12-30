@@ -1,7 +1,7 @@
 let port = 8086
 const deckAPIFetching = {
 // fetch to grab certain deck
-  getDeck(deckName){
+  getDeckByName(deckName){
     return fetch(`http://localhost:${port}/decks?q=${deckName}`)
     .then(deck => deck.json())
     .then(parsedDeck => parsedDeck)
@@ -26,6 +26,18 @@ const deckAPIFetching = {
       },
       body: JSON.stringify(card)
     }).then(deck => deck.json())
+  },
+  getDeck(deck){
+    console.log(deck,"deck name")
+    return fetch(`http://localhost:${port}/deckCards?deck_id=${deck}`)
+    .then(deck =>  deck.json())
+    .then(parsedDeck => parsedDeck)
+  },
+  getCardFromDeck(deck){
+    console.log(deck,"card id")
+    return fetch(`http://localhost:${port}/cards?q=${deck}`)
+    .then(card => card.json())
+    .then(parsedCard => parsedCard)
   }
 }
   export default deckAPIFetching

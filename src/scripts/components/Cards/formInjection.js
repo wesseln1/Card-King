@@ -7,10 +7,10 @@ import getAllCards from "./allCardsToDom";
 // let card = document.querySelector(".cardSearchButton")
 let cardFormManager = {
   cardListening() {
-    let cards = document.querySelector(".cardSearchButton")
+    // let cards = document.querySelector(".cardSearchButton")
     let card = document.querySelector(".cardName")
     console.log("at cardListening")
-    cards.addEventListener("click", () => {
+    $("#cardSearchButton").click( ()=>{
       console.log(card.value, "card value at cardListening")
       findMyCard(card.value)
     })
@@ -18,16 +18,15 @@ let cardFormManager = {
   addCard(card) {
     $(`#add_${card.id}`).click(function () {
         console.log("running", card)
-        postNewCard(card).then(
-          getAllCards()
-        )
+        postNewCard(card)
+         return getAllCards()
     })
   },
   searchAll() {
     console.log("here")
-    let cards = document.querySelector(".allCardSearch")
+    // let cards = document.querySelector(".allCardSearch")
     let card = document.querySelector(".cardName")
-    cards.addEventListener("click", () => {
+    $("#allCardSearch").click( () => {
       // console.log(card.value, "card value")
       cardsToDom(card.value)
     })
