@@ -5,11 +5,12 @@ import cardFormManager from "./components/Cards/formInjection"
 import getAllCards from "./components/Cards/allCardsToDom"
 import deckSearchForm from "./components/Decks/formInjection"
 import homePageInjection from "./components/Home/homePageInjection"
+import deckCardsToDom from "./components/Decks/getCardsListener"
 // import cardToDeckListening from "./components/Decks/cardToDeckListener";
 
 
-let login = document.querySelector("#loginButton")
-let newUser = document.querySelector("#signUpButton")
+
+// let newUser = document.querySelector("#signUpButton")
 // let card = document.querySelector(".cardSearchButton")
 // let homeNav = document.querySelector(".home")
 // let cardNav = document.querySelector("#cards")
@@ -18,44 +19,49 @@ let newUser = document.querySelector("#signUpButton")
 // let logoutNav = document.querySelector(".logout")
 // let addFav =  document.querySelector(".addToFavorites")
 
-login.addEventListener("click", () => {
+$("#loginButton").click( () => {
   loginUser()
-})
+}),
 
-newUser.addEventListener("click", () => {
+$("newUser").click( () => {
   registerUser()
-})
+}),
 
 $(document).ready(function () {
   $("#decks").click(function () {
-    deckSearchForm()
+    $(".p-3").detach()
+    $(".p-2").detach()
     console.log("clicked decks")
+    deckSearchForm()
+    deckCardsToDom()
   })
-})
+}),
 $("#home").click(function () {
+  $(".p-3").detach()
+  $(".p-2").detach()
   homePageInjection()
   console.log("clicked home")
-})
+}),
 
 $("#cards").click(function () {
-  $(".domEntry").detach()
+  $(".p-2").detach()
   cardFormManager.searchForm()
   getAllCards()
   cardFormManager.cardListening()
   cardFormManager.searchAll()
- })
+ }),
 
   $("#addToCollection").click(function () {
     console.log("clicked add")
     postNewCard()
-  })
+  }),
 
   $(document).ready(function () {
     $("#loginButton").click(function () {
       $("#loginBox").hide()
       homePageInjection()
     });
-  })
+  }),
 
   $(document).ready(function () {
     $("#loginButton").click(function () {

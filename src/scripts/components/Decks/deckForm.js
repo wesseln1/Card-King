@@ -1,13 +1,15 @@
 function deckForm() {
   let card = `
-  <div id="deckDiv" class="deckDiv">
+  <div id="deckDiv" class="p-2">
   <div>
-      <input type="text" id="deckName" class="deckName" placeholder="Deck Name"/>
-      <input type="button" id="newDeck" class="newDeck" value="New Deck" placeholder="New Deck"/>
+  <h1>Make new deck</h1>
+      <input type="text" id="deckName" placeholder="Deck Name"/>
+      <input type="button" id="newDeck" class="btn btn-primary" value="New Deck"/>
    </div>
-   <div>
-      <input type="text" id="decksNameSearch" class="decksNameSearch" placeholder="Search For Deck"/>
-      <input type="button" id="deckSearch" class="deckSearch" value="Search All Decks"/>
+   <div class="p-2">
+   <h2>Find deck</h2>
+      <input type="text" id="deckNameSearch" class="" placeholder="Search For Deck"/>
+      <input type="button" id="deckSearch" class="btn btn-primary" value="Search All Decks"/>
    </div>
   </div>
   `

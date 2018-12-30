@@ -5,7 +5,6 @@ function addCardDeck(card){
   // let cardId = document.getElementById(`deck_${card.id}`)
   // console.log("cardid", cardId)
   $(`#deck_${card.id}`).click(()=> {
-    console.log("click"),
     addToDeckForm(card)
   })
   }

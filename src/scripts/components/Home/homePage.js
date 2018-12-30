@@ -1,6 +1,6 @@
 function home() {
   let homePage = `
-  <div id="homePageDiv" id="homePageHeader">
+  <div id="homePageDiv" class="p-2">
   <div id="header" class="header">
     <h1> Welcome to Card Kings!</h1>
   </div>
