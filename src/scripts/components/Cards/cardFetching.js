@@ -5,7 +5,7 @@
 let port = 8086
 const cardAPIFetching = {
 
-  getCards() {
+  getMyCards() {
     return fetch(`http://localhost:${port}/cards`)
     .then(cards => cards.json())
     .then(parsedCards => parsedCards)

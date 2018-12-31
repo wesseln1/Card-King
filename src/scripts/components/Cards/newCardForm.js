@@ -4,9 +4,10 @@ const cardForms = {
   myCardForm(card){
     let buildCard = `
     <div id="newCardDiv" class="p-2">
-    <div class="cardHead>
+    <section>
+    <div class="cardHead">
     <h1>${card.name}</h1>
-    <h2>${card.series}</h2>
+    <h2>Series: ${card.series}</h2>
   </div>
   <div class="cardURL">
   <a><img src=${card.imageUrl} alt=${card.name}></a>
@@ -28,7 +29,8 @@ const cardForms = {
  cardForm(card) {
   let cards =  `
   <div id="card" class="p-2">
-  <h1>${card.name}</h1>
+  <h1>"${card.name}"</"h1>
+  <h2>Series: ${card.series}</h2>
   <div id="cardDiv" class="cardDiv">
     <a><img src=${card.imageUrl} alt=${card.name}></a>
     </div>

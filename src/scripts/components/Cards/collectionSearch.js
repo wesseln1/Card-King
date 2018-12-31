@@ -14,7 +14,7 @@ function searchForCard(parsedCard){
       deleteCard()
       console.log("card", card)
     })
-    cardToDeckListening()
+    cardToDeckListening(parsedCard)
   }
 
 let findMyCard = (card) => {

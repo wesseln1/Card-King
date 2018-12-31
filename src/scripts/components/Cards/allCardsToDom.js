@@ -8,7 +8,7 @@ import addCardDeck from "../Decks/cardsToDeckListener"
 function getAllCards() {
   $(".p-2").detach(),
   // $("#cardEntry").detach()
-  cardAPIFunctions.getCards()
+  cardAPIFunctions.getMyCards()
     .then(parsedCards => {
       parsedCards.forEach((card) => {
         let taskContents = cardForms.myCardForm(card)
