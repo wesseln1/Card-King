@@ -1,6 +1,6 @@
 import deckAPIFetching from "./deckFetching"
-import cardFormManager from "../Cards/formInjection"
-import cardForms from "../Cards/newCardForm"
+import deckCardForms from "./cardDeckForm"
+import deleteCards from "./deleteCardFromDeck"
 
 let getDeckCards = {
   getDeckCard(deck) {
@@ -20,22 +20,26 @@ function getMyDeck(deck){
     // for (let deck in parsedDeck) {
       // let taskContents = parsedDeck[deck]
       parsedDeck.forEach(deck=> {
-        deck = deck.card_id
         getCards(deck)
       })}
   )}
 
 function getCards(deck) {
-  deckAPIFetching.getCardFromDeck(deck)
+  deckAPIFetching.getCardFromDeck(deck.card_id)
   .then(parsedCard => parsedCard)
   .then(card => {
     card.forEach(card => {
       console.log("cardss", card)
-      let taskContents = cardForms.myCardForm(card)
+      let taskContents = deckCardForms.myCardForm(card, deck)
       $("#cardEntry").append(taskContents)
       // let cards = document.querySelector(`#add_${card.id}`)
       console.log("cards", card)
-      cardFormManager.addCard(card)}
+      $(`#${deck.id}`).click(function (){
+        deleteCards(card, deck)
+      })
+
+      // cardFormManager.addCard(card)
+    }
   )})}
 
 // function domCards(parsedCards) {

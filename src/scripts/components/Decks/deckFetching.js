@@ -38,6 +38,11 @@ const deckAPIFetching = {
     return fetch(`http://localhost:${port}/cards?q=${deck}`)
     .then(card => card.json())
     .then(parsedCard => parsedCard)
+  },
+  deleteCardFromDeck(id){
+    return fetch(`http://localhost:${port}/deckCards/${id}`, {
+      method: "DELETE"
+    }).then(r => r.json())
   }
 }
   export default deckAPIFetching

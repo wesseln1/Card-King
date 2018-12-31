@@ -4,7 +4,7 @@ const decks = {
 
   newDeck() {
     // console.log("runnin")
-    let myDeck = document.querySelector(".deckName")
+    let myDeck = document.querySelector("#deckName")
     // console.log(myDeck, "my deck")
     console.log(myDeck, "myDeck")
     let deck = {

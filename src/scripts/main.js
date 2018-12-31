@@ -45,6 +45,7 @@ $("#home").click(function () {
 
 $("#cards").click(function () {
   $(".p-2").detach()
+  $(".p-3").detach()
   cardFormManager.searchForm()
   getAllCards()
   cardFormManager.cardListening()
